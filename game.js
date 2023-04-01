@@ -1,10 +1,10 @@
 let canvas;
-let canvasWidth = 3000;
-let canvasHeight = 1500;
+let canvasWidth = 1700;
+let canvasHeight = 900;
 let content;
 
-let playerWidth = 244;
-let playerHeight = 599.67;
+let playerWidth = 104.57;
+let playerHeight = 257;
 let playerX = 25;
 let playerY = canvasHeight - playerHeight;
 let playerImg;
@@ -18,17 +18,34 @@ let player = {
 
 let randomBox =[];
 
-let boxOneWidth = 186.4;
-let boxTwoWidth = 186.4;
-let boxThreeWidth = 186.4;
+let boxOneWidth = 133.14;
+let boxTwoWidth = 133.14;
+let boxThreeWidth = 133.14;
 
-let boxHeight = 144.8;
+let boxHeight = 103.4;
 let boxX = 3000;
 let boxY = canvasHeight - boxHeight;
 
 let boxOneImg;
 let boxTwoImg;
 let boxThreeImg;
+
+let collidedImgWidth = 271;
+let collidedImgheight =319;
+
+let collidedPlayer = {
+    width : collidedImgWidth,
+    height : collidedImgheight
+}
+let collidedImg;
+
+let villainHeight = 250.5;
+let villainWidth = 192.4;
+let villainImg;
+
+let villainX = 3000;
+let villainY = canvasHeight - villainHeight;
+
 
 let speedX = -15;
 let speedY = 0;
@@ -62,6 +79,10 @@ window.onload = function() {
     boxThreeImg = new Image();
     boxThreeImg.src = "./img/boxes3.png";
 
+    villainImg = new Image();
+    villainImg.src ="./img/old.png";
+
+
  
     requestAnimationFrame(load);
     setInterval(loadBox, 1000);
@@ -94,7 +115,11 @@ function load(){
              gameOver = true;
              playerImg.src ="./img/collided.png";
              playerImg.onload = function(){
-                content.drawImage(playerImg, player.x, player.y, player.width, player.height);
+                collidedImg = new Image;
+                collidedImg.src = "./img/collided.png"
+
+
+                content.drawImage(collidedImg, player.x, player.y, collidedPlayer.width, playerHeight);
              }
         }
 
@@ -103,6 +128,7 @@ function load(){
 
 }
 
+
 function playerMove(e) {
 
     if (gameOver) {
@@ -110,10 +136,12 @@ function playerMove(e) {
     }
 
     if (( e.code == "Space" || e.code == "ArrowUp") && player.y == playerY) {
-        speedY = -30;
+        speedY = -25;
+        
+
     }
     if ( e.code == "ArrowRight" && player.x == playerX) {
-        speedY = -5;
+        speedY = -7;
     }
 }
 
@@ -121,6 +149,14 @@ function loadBox () {
 
     if (gameOver) {
         return;
+    }
+
+    let villain = {
+        img : villainImg,
+        x : villainX,
+        y : villainY,
+        width : villainWidth,
+        height : villainHeight
     }
 
     let box = {
@@ -131,24 +167,27 @@ function loadBox () {
         height : boxHeight
     }
 
+
     let loadRandomBox = Math.random();
 
-    if (loadRandomBox > .90) {
+    if (loadRandomBox > .80) {
         box.img = boxThreeImg;
         box.width = boxThreeWidth;
         randomBox.push(box);
     }
-    else if (loadRandomBox > .70) {
+    else if (loadRandomBox > .60) {
         box.img = boxTwoImg;
         box.width = boxTwoWidth;
         randomBox.push(box);
     }
-    else if (loadRandomBox > .50) {
+    else if (loadRandomBox > .70) {
         box.img = boxOneImg;
         box.width = boxOneWidth;
         randomBox.push(box);
     }
-
+    else if (loadRandomBox > .50) {
+        randomBox.push(villain);
+    }
 
 
     if (randomBox.length > 5) {
