@@ -5,8 +5,49 @@
 
 body {
     background-color: #f8c02e;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2px;
+    font-size: 2em;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+ ul, li{
+    display: block;
+
+}
+ 
+a {
+    text-decoration: none;
+    color: crimson;
+}
+
+.logo {
+    display: block;
+    height: 540.2px;
+    width: 662.8px;
+}
+
+
+
+#canvasDiv {
+    padding: 10px;
 }
 
 canvas{
+    background-color:#f8c02e;
     padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-bottom: 6px groove rgba(231, 2, 2, 0.997);
 }

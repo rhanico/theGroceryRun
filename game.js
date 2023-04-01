@@ -1,11 +1,10 @@
-let canvas;
-let canvasWidth = 1700;
+let canvasWidth = 2000;
 let canvasHeight = 900;
 let content;
 
 let playerWidth = 104.57;
 let playerHeight = 257;
-let playerX = 25;
+let playerX = 100;
 let playerY = canvasHeight - playerHeight;
 let playerImg;
 
@@ -141,7 +140,7 @@ function playerMove(e) {
 
     }
     if ( e.code == "ArrowRight" && player.x == playerX) {
-        speedY = -7;
+        speedY = -5;
     }
 }
 
@@ -193,7 +192,6 @@ function loadBox () {
     if (randomBox.length > 5) {
         randomBox.shift();
     }
-
 }
 
 function colliding(a,b){
@@ -202,4 +200,3 @@ function colliding(a,b){
            a.y < b.y + b.height &&
            a.y + a.height > b.y;
 }
-
