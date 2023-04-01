@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f8c02e;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.title {
+    margin-top: 50px;
+    background-color: blue;
+}
+h1{
+    font-size: 50px;
+    padding: 5px;
+}
+
+
+
+.canvasDiv {
+    background-color: aliceblue;
+    margin: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    height: 700px;
+}
+
+#canvas {
+    background-color: green;
+
+}
