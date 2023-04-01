@@ -1,6 +1,6 @@
 let canvas;
-let canvasWidth = 2000;
-let canvasHeight = 900;
+let canvasWidth = 3000;
+let canvasHeight = 1500;
 let content;
 
 let playerWidth = 244;
@@ -18,22 +18,22 @@ let player = {
 
 let randomBox =[];
 
-let boxOneWidth = 233;
-let boxTwoWidth = 233;
-let boxThreeWidth = 233;
+let boxOneWidth = 186.4;
+let boxTwoWidth = 186.4;
+let boxThreeWidth = 186.4;
 
-let boxHeight = 181;
-let boxX = 1700;
+let boxHeight = 144.8;
+let boxX = 3000;
 let boxY = canvasHeight - boxHeight;
 
 let boxOneImg;
 let boxTwoImg;
 let boxThreeImg;
 
-let speedX = -8;
+let speedX = -15;
 let speedY = 0;
 
-let gravity = .4;
+let gravity = .9;
 
 let gameOver = false;
 let score = 0;
@@ -110,9 +110,11 @@ function playerMove(e) {
     }
 
     if (( e.code == "Space" || e.code == "ArrowUp") && player.y == playerY) {
-        speedY = -20;
+        speedY = -30;
     }
-
+    if ( e.code == "ArrowRight" && player.x == playerX) {
+        speedY = -5;
+    }
 }
 
 function loadBox () {
@@ -131,12 +133,12 @@ function loadBox () {
 
     let loadRandomBox = Math.random();
 
-    if (loadRandomBox > .99) {
+    if (loadRandomBox > .90) {
         box.img = boxThreeImg;
         box.width = boxThreeWidth;
         randomBox.push(box);
     }
-    else if (loadRandomBox > .80) {
+    else if (loadRandomBox > .70) {
         box.img = boxTwoImg;
         box.width = boxTwoWidth;
         randomBox.push(box);
@@ -161,3 +163,4 @@ function colliding(a,b){
            a.y < b.y + b.height &&
            a.y + a.height > b.y;
 }
+
