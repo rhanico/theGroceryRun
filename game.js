@@ -1,5 +1,5 @@
 let canvasWidth = 2000;
-let canvasHeight = 900;
+let canvasHeight = 800;
 let content;
 
 let playerWidth = 104.57;
@@ -15,7 +15,7 @@ let player = {
     height : playerHeight
 }
 
-let randomBox =[];
+let randomBox = [];
 
 let boxOneWidth = 133.14;
 let boxTwoWidth = 133.14;
@@ -28,6 +28,7 @@ let boxY = canvasHeight - boxHeight;
 let boxOneImg;
 let boxTwoImg;
 let boxThreeImg;
+
 
 let collidedImgWidth = 271;
 let collidedImgheight =319;
@@ -63,11 +64,16 @@ window.onload = function() {
 
     content = canvas.getContext("2d");
 
+    backOneImg = new Image();
+    backOneImg.src = "./img/shelve1.png";
+    
+
     playerImg = new Image();
     playerImg.src = "./img/player.png";
     playerImg.onload = function() {
-        content.drawImage(playerImg, player.x, player.y, player.width, player.height);
+        content.drawImage( playerImg, player.x, player.y, player.width, player.height);
     }
+
 
     boxOneImg = new Image();
     boxOneImg.src = "./img/boxes1.png";
@@ -87,7 +93,6 @@ window.onload = function() {
     setInterval(loadBox, 1000);
     document.addEventListener("keydown", playerMove);
 }
-
 
 
 
@@ -117,14 +122,17 @@ function load(){
                 collidedImg = new Image;
                 collidedImg.src = "./img/collided.png"
 
-
                 content.drawImage(collidedImg, player.x, player.y, collidedPlayer.width, playerHeight);
              }
         }
 
-        
     }
 
+    content.fillStyle = "crimson";
+    content.font ="50px MArgarine";
+    score++;
+    content.fillText(score, 1550, 150)
+    
 }
 
 
@@ -133,16 +141,15 @@ function playerMove(e) {
     if (gameOver) {
         return;
     }
-
     if (( e.code == "Space" || e.code == "ArrowUp") && player.y == playerY) {
-        speedY = -25;
-        
-
+    speedY = -25;
     }
     if ( e.code == "ArrowRight" && player.x == playerX) {
         speedY = -5;
     }
+
 }
+
 
 function loadBox () {
 
@@ -200,3 +207,4 @@ function colliding(a,b){
            a.y < b.y + b.height &&
            a.y + a.height > b.y;
 }
+
