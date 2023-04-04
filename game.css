@@ -5,6 +5,20 @@
 
 }
 
+#audioTag {
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    padding: 10px;
+
+}
+
+audio {
+    width: 100px;
+    height: 100px;
+}
+
+
 body {
     background-color: #f8c02e;
     display: flex;
@@ -24,6 +38,7 @@ header {
     overflow: hidden;
     height: 200px;
     margin-bottom: 0;
+
 }
  ul, li{
     display: block;
