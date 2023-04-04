@@ -13,61 +13,72 @@ body {
     text-align: center;
 }
 
-img{
-    width: 500px;
-    height: 500px;
-}
-
 header {
     padding: 10px;
+    padding-bottom: 5px;
     width:100%;
-    background-color: aliceblue;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
+    margin-top: 5px;
+
 }
 
 #bannerSign {
-    background-color:#f8c02e;
-    font-size: 1.5em;
+    font-size: 1em;
+    padding: 10px;
+    width: 100%;
 }
 
-#bannerText {
+#bannerContent {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-#bannerText h2 {
-    margin: 10px;
-    padding: 5px;
+#bannerContent h2 {
+    margin: 3px;
+    padding: 10px;
+    margin: auto;
+    font-weight: bolder ;
+}
 
+#bannerContent img {
+    width: 50px;
+    height: auto;
 }
 
 main {
-    background-color:green;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 10px;
-    position: relative;
     width: 100%;
 }
 
 #mainContent {
-    background-color: cadetblue;
-    height: 65em ;
+    height: 63em;
     width: 100%;
 }
 
 
 #mainPoster img{
-    background-color: beige;
-    width: 981.5px;
-    height: 983px;
+    width: 785.2px;
+    height: auto;
+}
+
+
+#logo img {
+    width: 552.33px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+article h1{
+    font-size: 2.5em;
+    
 }
