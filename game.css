@@ -48,11 +48,16 @@ header {
     font-size: 5rem;
 
 }
+a :hover{
+    color: white;
+}
  
 a {
     text-decoration: none;
     color: crimson;
 }
+
+
 .logoDiv{
     position: relative;
     overflow: hidden;
