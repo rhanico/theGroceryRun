@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gaegu', cursive;
+}
+
+body {
+    background-color:#f8c02e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+img{
+    width: 500px;
+    height: 500px;
+}
+
+header {
+    padding: 10px;
+    width:100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#bannerSign {
+    background-color:#f8c02e;
+    font-size: 1.5em;
+}
+
+#bannerText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#bannerText h2 {
+    margin: 10px;
+    padding: 5px;
+
+}
+
+main {
+    background-color:green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+#mainContent {
+    background-color: cadetblue;
+    height: 65em ;
+    width: 100%;
+}
+
+
+#mainPoster img{
+    background-color: beige;
+    width: 981.5px;
+    height: 983px;
+}
